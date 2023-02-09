@@ -6,7 +6,8 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "node node_modules/@nestjs/cli/bin/nest.js build",
+    "build": "npx @nestjs/cli build",
+    "build:global": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "node dist/main",
     "start:prod": "nest start",
@@ -33,8 +34,7 @@
     "joi": "^17.7.0",
     "mongoose": "^6.9.1",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.2.0",
-    "@nestjs/cli": "^9.2.0"
+    "rxjs": "^7.2.0"
   },
   "devDependencies": {
     "@nestjs/schematics": "^9.0.0",
