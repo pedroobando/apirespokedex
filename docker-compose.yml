@@ -13,6 +13,8 @@ services:
     ports:
       - '${PORT}:${PORT}'
     # working_dir: /var/www/pokedex
+    links:
+      - 'db:database'
     environment:
       MONGODB_URL: ${MONGODB_URL}
       PORT: ${PORT}
