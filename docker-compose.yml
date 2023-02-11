@@ -16,9 +16,11 @@ services:
     links:
       - 'db:database'
     environment:
-      MONGODB_URL: ${MONGODB_URL}
+      MONGODB_URL: 'mongodb://mongo-poke:27017/nest-pokemon' #${MONGODB_URL}
       PORT: ${PORT}
       DEFAULT_LIMIT: ${DEFAULT_LIMIT}
+    networks:
+      - netbackend
     # volumes:
     #   - ./:/var/www/pokedex
 
@@ -30,5 +32,16 @@ services:
       - 27017:27017
     environment:
       MONGODB_DATABASE: nest-pokemon
+    networks:
+      - netbackend
     # volumes:
     #   - ./mongo:/data/db
+
+networks:
+  netbackend:
+    driver: bridge
+    # ipam:
+    #   driver: default
+    #   config:
+    #     - subnet: 172.26.238.0/24
+    #       gateway: 172.26.238.1
