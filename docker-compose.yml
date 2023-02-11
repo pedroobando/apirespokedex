@@ -16,7 +16,7 @@ services:
     links:
       - 'db:database'
     environment:
-      MONGODB_URL: 'mongodb://mongo-poke:27017/nest-pokemon' #${MONGODB_URL}
+      MONGODB_URL: mongodb://mongo-poke:27017/nest-pokemon #${MONGODB_URL}
       PORT: ${PORT}
       DEFAULT_LIMIT: ${DEFAULT_LIMIT}
     networks:
